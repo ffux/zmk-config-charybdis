@@ -89,6 +89,19 @@
         , <&macro_release &kp LCTRL &kp LALT>
         ;
     };
+
+    // Shift+Middle Click macro
+    ls_mclk: ls_mclk {
+      compatible = "zmk,behavior-macro";
+      wait-ms = <0>;
+      tap-ms = <10>;
+      #binding-cells = <0>;
+      bindings
+        = <&macro_press &kp LSHIFT>
+        , <&macro_tap &mkp MCLK>
+        , <&macro_release &kp LSHIFT>
+        ;
+    };
   };
 
   combos {
@@ -155,7 +168,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp LA(TAB)   &kp LGUI      &kp LALT      &mo SNIPING   &mkp MB4      &mkp MB5          &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &kp F11       &kp F12
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp RCTRL     &kp LG(A)     &kp LS(MCLK)  &mkp RCLK     &mkp LCLK     &mkp MCLK         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp MINUS     &kp EQUAL
+    &kp RCTRL     &kp LG(A)     &ls_mclk      &mkp RCLK     &mkp LCLK     &mkp MCLK         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp MINUS     &kp EQUAL
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp LSFT      &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &mo SCROLL        &kp RC(LS(TAB)) &kp LC(TAB) &kp INS       &kp INS       &kp LBKT      &kp RBKT
 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
