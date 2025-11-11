@@ -4,6 +4,42 @@ This configuration supports two modes:
 - **Standalone Mode**: Right keyboard acts as central, connects directly to host
 - **Dongle Mode**: Dedicated dongle with display acts as central, both keyboards connect to it
 
+## Table of Contents
+
+- [ZMK CONFIG FOR THE CHARYBDIS 4X6 WIRELESS SPLIT KEYBOARD](#zmk-config-for-the-charybdis-4x6-wireless-split-keyboard)
+  - [Table of Contents](#table-of-contents)
+  - [BOM](#bom)
+    - [Additional Components for Dongle Mode](#additional-components-for-dongle-mode)
+  - [Repository Structure](#repository-structure)
+    - [Key Files Explained](#key-files-explained)
+      - [Shared Configuration Files (Consolidated)](#shared-configuration-files-consolidated)
+      - [Shield-Specific Files](#shield-specific-files)
+  - [Operating Modes](#operating-modes)
+    - [Standalone Mode](#standalone-mode)
+    - [Dongle Mode](#dongle-mode)
+    - [Dongle Display Features (Prospector Module)](#dongle-display-features-prospector-module)
+  - [West.yml Configuration](#westyml-configuration)
+    - [Remotes Section](#remotes-section)
+    - [Projects Section](#projects-section)
+    - [Self Section](#self-section)
+  - [Keymap](#keymap)
+  - [Trackball Sensitivity Configuration](#trackball-sensitivity-configuration)
+    - [Hardware Sensor Sensitivity (CPI/DPI)](#hardware-sensor-sensitivity-cpidpi)
+    - [Software Scaling (Movement Speed)](#software-scaling-movement-speed)
+    - [How Scaler Values Work](#how-scaler-values-work)
+    - [Reference Documentation](#reference-documentation)
+  - [ZMK Studio Support](#zmk-studio-support)
+    - [Physical Layout Definition](#physical-layout-definition)
+    - [Enabling/Disabling ZMK Studio](#enablingdisabling-zmk-studio)
+    - [Studio Unlock](#studio-unlock)
+  - [Building Firmware](#building-firmware)
+    - [GitHub Actions (Automatic)](#github-actions-automatic)
+    - [Local Build (Manual)](#local-build-manual)
+  - [Flashing Firmware](#flashing-firmware)
+    - [How to Flash](#how-to-flash)
+    - [Standalone Mode](#standalone-mode-1)
+    - [Dongle Mode](#dongle-mode-1)
+
 ## BOM
 
 Here is the BOM for this project (outdated): [BOM Charybdis 4x6 Wireless](/docs/bom/readme.md)
@@ -302,6 +338,8 @@ The interactive build script provides options for:
 3. **charybdis_right_peripheral** - Right keyboard for dongle mode (Nice!Nano v2)
 4. **charybdis_dongle** - Dongle with display (Seeeduino XIAO BLE)
 5. **settings_reset** - Reset stored settings
+
+⚠️ **Known Issue:** Option 4 (charybdis_dongle with prospector_adapter) currently fails in local builds due to module patching requirements. Options 1-3 and 5 work correctly. **Use GitHub Actions for dongle builds** or consider using [act](https://github.com/nektos/act) to run the GitHub Actions workflow locally.
 
 Built firmware files are automatically copied to `manual_build/artifacts/output/` with descriptive names like `charybdis-dongle-seeeduino-xiao-ble.uf2`.
 

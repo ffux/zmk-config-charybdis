@@ -29,7 +29,7 @@
 | Flex PCB Right Thumb | 1      | https://github.com/Bastardkb/Charybdis-PCB-thumbs                             |
 | Flex PCB Left Thumb  | 1      | https://github.com/Bastardkb/Scylla-PCB-thumb-cluster                         |
 | PMW3610 Breakout     | 1      | https://github.com/Bastardkb/charybdis-pmw3610-breakout                       |
-| Nice!Nano Holder     | 1      | https://github.com/olidacombe/Elite-C-holder/tree/nicenano/adapter/production |
+| Nice!Nano Holder     | 1      | https://github.com/victorlucachi/Elite-C-holder                               |
 
 ## 3D Prints
 
